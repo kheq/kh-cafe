@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kh Cafe</title>
-    <link href="https://fonts.googleapis.com/css2?family=Quintessential&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Quintessential&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -19,7 +19,6 @@
             justify-content: center;
             align-items: center;
             overflow: hidden;
-            /* Prioritizing Zapf Chancery for that exact 'KH' look */
             font-family: "Zapf Chancery", "Apple Chancery", "Quintessential", cursive;
         }
 
@@ -41,8 +40,7 @@
             height: 100%;
             object-fit: cover;
             z-index: 1;
-            /* Subtle 'pulse' zoom to make it look alive */
-            animation: slowZoom 15s infinite alternate ease-in-out;
+            /* The animation here was removed to stop the background from moving */
         }
 
         /* The Overlay Button */
@@ -51,14 +49,19 @@
             z-index: 10;
             padding: 10px 40px;
             font-size: 2.5rem;
-            font-style: italic;
-            color: #fff;
+            
+            font-family: 'Cormorant Garamond', serif;
+            font-style: normal; /* Changed from italic to normal */
+            font-weight: 600; 
+            color: #E0E0E0;
+
             background: none;
             border: none;
             cursor: pointer;
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.4), 2px 4px 10px rgba(0, 0, 0, 0.9);
             transition: all 0.8s ease;
-            margin-top: 140px; /* Positioned below your image's text */
+            margin-top: 140px; 
+            animation: glowText 4s infinite alternate;
         }
 
         .enter-btn:hover {
@@ -67,20 +70,9 @@
             transform: scale(1.05);
         }
 
-        /* Cool Entry Animations */
         @keyframes fadeInPage {
             from { opacity: 0; }
             to { opacity: 1; }
-        }
-
-        @keyframes slowZoom {
-            0% { transform: scale(1); }
-            100% { transform: scale(1.08); }
-        }
-
-        /* Subtle glow animation for the button text */
-        .enter-btn {
-            animation: glowText 4s infinite alternate;
         }
 
         @keyframes glowText {
@@ -99,13 +91,12 @@
 
     <script>
         function startExperience() {
-            // Smooth transition effect
             document.querySelector('.intro-wrapper').style.transition = "all 1.5s ease";
             document.querySelector('.intro-wrapper').style.filter = "brightness(0) blur(10px)";
             
             setTimeout(() => {
-                alert("Welcome to the world of KH Cafe.");
-                // window.location.href = "home.html"; // Your destination page
+                alert("Welcome to the world of Kh.");
+                // window.location.href = "home.html"; 
             }, 1500);
         }
     </script>
